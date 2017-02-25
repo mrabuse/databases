@@ -7,16 +7,11 @@ CREATE TABLE user (
   name varchar(25) NOT NULL UNIQUE
 );
 
-CREATE TABLE room (
-  id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  name varchar(25) NOT NULL UNIQUE
-);
-
 CREATE TABLE messages (
   id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
   message TEXT NOT NULL,
   user int NOT NULL,
-  room int NOT NULL,
+  roomname varchar(25),
 
   FOREIGN KEY (user)
     REFERENCES user(id),
